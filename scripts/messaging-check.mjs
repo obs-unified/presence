@@ -14,6 +14,7 @@ const MANIFEST_PATH = "public/messaging.manifest.json";
 const SITE_JSON_PATH = "src/content/site.json";
 const GENERATED_TS_PATH = "src/content/messaging.generated.ts";
 const LLMS_TXT_PATH = "public/llms.txt";
+const COMPARE_TS_PATH = "src/sections/compare.ts";
 
 const failures = [];
 const fail = (msg) => failures.push(msg);
@@ -164,11 +165,46 @@ console.log("CHECK 4 — shipped features on site.features");
 }
 
 // ---------------------------------------------------------------------------
+// CHECK 5 — comparison rows are rendered from the manifest axes.
+// ---------------------------------------------------------------------------
+console.log("CHECK 5 — manifest-backed comparison axes");
+{
+	const axes = manifest?.authored?.positioning?.comparison?.axes ?? [];
+	const vendorKeys = (manifest?.authored?.positioning?.comparison?.agentRows ?? []).map(
+		(row) => row.key,
+	);
+	let compareTs = "";
+	try {
+		compareTs = read(COMPARE_TS_PATH);
+	} catch (err) {
+		fail(`could not read ${COMPARE_TS_PATH}: ${err.message}`);
+	}
+
+	if (axes.length === 0) {
+		fail("manifest.authored.positioning.comparison.axes is empty");
+	} else {
+		ok(`${axes.length} comparison axes are present in the manifest`);
+	}
+	for (const axis of axes) {
+		for (const key of vendorKeys) {
+			if (!axis.cells?.[key]) {
+				fail(`comparison axis "${axis.id}" is missing a "${key}" cell`);
+			}
+		}
+	}
+	if (compareTs.includes("comparison.axes") && !compareTs.includes("const ROWS: Row[] = [")) {
+		ok(`${COMPARE_TS_PATH} renders rows from messaging.authored.positioning.comparison.axes`);
+	} else {
+		fail(`${COMPARE_TS_PATH} must render comparison rows from manifest comparison.axes, not a local ROWS literal`);
+	}
+}
+
+// ---------------------------------------------------------------------------
 console.log("");
 if (failures.length > 0) {
 	for (const f of failures) console.error(`✗ ${f}`);
 	console.error(`\n✗ messaging parity check FAILED (${failures.length} issue${failures.length === 1 ? "" : "s"})`);
 	process.exit(1);
 }
-console.log("✓ messaging parity check passed (4/4 checks clean)");
+console.log("✓ messaging parity check passed (5/5 checks clean)");
 process.exit(0);

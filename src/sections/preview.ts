@@ -12,12 +12,12 @@ pnpm local:image
 pnpm local:run`;
 
 const SDK_PATHS = `Backend:
-  TypeScript  @obs-unified/* on GitHub Packages
+  TypeScript  @obsunified/* on GitHub Packages
   Go          sdks/go
   Rust        sdks/rust
 
 Browser:
-  React/vanilla  @obs-unified/analytics-sdk`;
+  React/vanilla  @obsunified/analytics-sdk`;
 
 const INSTRUMENT = `// Backend
 initObservability({ serviceName: "checkout-api" });

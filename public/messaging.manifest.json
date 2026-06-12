@@ -72,50 +72,85 @@
 			{
 				"name": "@obsunified/agents-langgraph",
 				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
+				"scope": "@obs-unified",
 				"dir": "packages/agents-langgraph",
 				"private": false
 			},
 			{
 				"name": "@obsunified/agents-vercel-ai",
 				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
+				"scope": "@obs-unified",
 				"dir": "packages/agents-vercel-ai",
 				"private": false
 			},
 			{
 				"name": "@obsunified/analytics-sdk",
 				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
+				"scope": "@obs-unified",
 				"dir": "packages/analytics-sdk",
 				"private": false
 			},
 			{
 				"name": "@obsunified/brand",
 				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
+				"scope": "@obs-unified",
 				"dir": "packages/brand",
 				"private": false
 			},
 			{
 				"name": "@obsunified/cli",
 				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
+				"scope": "@obs-unified",
 				"dir": "packages/cli",
 				"private": false
 			},
 			{
 				"name": "@obsunified/collector",
 				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
+				"scope": "@obs-unified",
 				"dir": "packages/obs-collector",
 				"private": false
 			},
 			{
 				"name": "@obsunified/dashboard",
 				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
+				"scope": "@obs-unified",
 				"dir": "packages/dashboard",
+				"private": false
+			},
+			{
+				"name": "@obsunified/messaging",
+				"registry": "https://registry.npmjs.org/",
+				"scope": "@obs-unified",
+				"dir": "packages/messaging",
+				"private": true
+			},
+			{
+				"name": "@obsunified/pprof-decoder",
+				"registry": "https://registry.npmjs.org/",
+				"scope": "@obs-unified",
+				"dir": "packages/pprof-decoder",
+				"private": false
+			},
+			{
+				"name": "@obsunified/sdk",
+				"registry": "https://registry.npmjs.org/",
+				"scope": "@obs-unified",
+				"dir": "sdks/node",
+				"private": false
+			},
+			{
+				"name": "@obsunified/telemetry-sdk",
+				"registry": "https://registry.npmjs.org/",
+				"scope": "@obs-unified",
+				"dir": "packages/telemetry-sdk",
+				"private": false
+			},
+			{
+				"name": "@obsunified/types",
+				"registry": "https://registry.npmjs.org/",
+				"scope": "@obs-unified",
+				"dir": "packages/obs-types",
 				"private": false
 			},
 			{
@@ -123,41 +158,6 @@
 				"registry": "https://registry.npmjs.org/",
 				"scope": "@obsunified",
 				"dir": "packages/mcp-server",
-				"private": false
-			},
-			{
-				"name": "@obsunified/messaging",
-				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
-				"dir": "packages/messaging",
-				"private": true
-			},
-			{
-				"name": "@obsunified/pprof-decoder",
-				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
-				"dir": "packages/pprof-decoder",
-				"private": false
-			},
-			{
-				"name": "@obsunified/sdk",
-				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
-				"dir": "sdks/node",
-				"private": false
-			},
-			{
-				"name": "@obsunified/telemetry-sdk",
-				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
-				"dir": "packages/telemetry-sdk",
-				"private": false
-			},
-			{
-				"name": "@obsunified/types",
-				"registry": "https://registry.npmjs.org/",
-				"scope": "@obsunified",
-				"dir": "packages/obs-types",
 				"private": false
 			}
 		]
